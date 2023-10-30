@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Body() {
   return (
@@ -21,8 +21,8 @@ export default function Body() {
             </p>
           </div>
           <div>
-            <button>
-              <FontAwesomeIcon icon={faX} />
+            <button className="dark:text-lightMode-DarkGrayishBlue">
+              <FontAwesomeIcon icon={faTrash} />
             </button>
           </div>
         </div>

@@ -18,7 +18,7 @@ export default function App() {
   };
 
   return (
-    <div className="text-lg font-normal font-Josefin bg-lightMode-VeryLightGray dark:bg-darkMode-VeryDarkBlue">
+    <div className="text-lg font-normal font-Josefin bg-lightMode-VeryLightGray dark:bg-darkMode-VeryDarkBlue h-screen">
       <Head handleClick={handleThemeSwitch} />
       <Body />
     </div>
