@@ -4,7 +4,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function Head({ handleClick }) {
   return (
-    <div className="flex items-center justify-center bg-[url('/bg-mobile-light.jpg')] dark:bg-[url('/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[250px] md:bg-[url('bg-desktop-light.jpg')] md:dark:bg-[url('bg-desktop-dark.jpg')] md:bg-no-repeat">
+    <div className="flex items-center justify-center bg-[url('/bg-mobile-light.jpg')] dark:bg-[url('/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[250px] md:bg-[url('/bg-desktop-light.jpg')] md:dark:bg-[url('/bg-desktop-dark.jpg')] md:bg-no-repeat">
       <div className="flex items-center justify-between w-11/12 mb-24 px-5 md:w-7/12 md:px-0">
         <h1 className="text-4xl font-bold text-lightMode-VeryLightGray">
           T O D O
