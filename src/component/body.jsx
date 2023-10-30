@@ -43,9 +43,12 @@ export default function Body() {
   return (
     <div className="flex items-center justify-center flex-col gap-5 w-full -mt-28">
       <div className="flex items-center gap-3 w-11/12 h-14 rounded-md py-3 px-5 bg-lightMode-VeryLightGray dark:bg-darkMode-VeryDarkBlue md:w-7/12">
-        <input className="" type="checkbox" />
         <input
-          className="text-lightMode-VeryGrayishBlue dark:text-darkMode-LightGrayishBlue placeholder:text-base placeholder:text-lightMode-DarkGrayishBlue placeholder:dark:text-darkMode-VeryDarkGrayishBlue bg-lightMode-VeryLightGray dark:bg-darkMode-VeryDarkBlue outline-none"
+          className="form-checkbox bg-lightMode-VeryDarkGray dark:bg-darkMode-VeryDarkBlue rounded-full focus:ring-0"
+          type="checkbox"
+        />
+        <input
+          className="form-input text-lightMode-VeryGrayishBlue dark:text-darkMode-LightGrayishBlue placeholder:text-base placeholder:text-lightMode-DarkGrayishBlue placeholder:dark:text-darkMode-VeryDarkGrayishBlue bg-lightMode-VeryLightGray dark:bg-darkMode-VeryDarkBlue focus:outline-transparent"
           type="text"
           placeholder="Create a new todo..."
           value={newTodo}
@@ -68,6 +71,7 @@ export default function Body() {
         >
           <div className="flex items-center gap-3">
             <input
+            className="form-checkbox rounded-full focus:ring-0"
               type="checkbox"
               checked={todo.completed}
               onChange={() => toggleTodo(index)}
