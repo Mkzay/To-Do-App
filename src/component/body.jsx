@@ -5,6 +5,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 export default function Body() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
+  const [filter, setFilter] = useState("All");
 
   const addTodo = () => {
     if (newTodo.trim() === "") return;
@@ -28,6 +29,17 @@ export default function Body() {
     setTodos(updatedTodos);
   };
 
+  const getFilteredTodos = () => {
+    switch (filter) {
+      case "Active":
+        return todos.filter((todo) => !todo.completed);
+      case "Completed":
+        return todos.filter((todo) => todo.completed);
+      default:
+        return todos;
+    }
+  };
+
   return (
     <div className="flex items-center justify-center flex-col gap-5 w-full -mt-28">
       <div className="flex items-center gap-3 w-11/12 h-14 rounded-md py-3 px-5 bg-lightMode-VeryLightGray dark:bg-darkMode-VeryDarkBlue md:w-7/12">
@@ -45,7 +57,7 @@ export default function Body() {
           }}
         />
       </div>
-      {todos.map((todo, index) => (
+      {getFilteredTodos().map((todo, index) => (
         <div
           key={index}
           className={`flex items-center justify-between w-11/12 h-14 rounded-md py-3 px-5 border-b ${
@@ -90,13 +102,34 @@ export default function Body() {
         </p>
       </div>
       <div className="flex items-center justify-center gap-8 w-11/12 h-14 text-base rounded-md py-3 px-5 shadow-xl border-b bg-lightMode-VeryLightGray dark:bg-darkMode-VeryDarkBlue md:w-7/12 md:shadow-none md:-mt-5">
-        <p className="font-bold text-lightMode-DarkGrayishBlue dark:text-darkMode-DarkGrayishBlue">
+        <p
+          className={`font-bold cursor-pointer ${
+            filter === "All"
+              ? "text-primary-BrightBlue"
+              : "text-lightMode-DarkGrayishBlue dark:text-darkMode-DarkGrayishBlue"
+          }`}
+          onClick={() => setFilter("All")}
+        >
           All
         </p>
-        <p className="font-bold text-lightMode-DarkGrayishBlue dark:text-darkMode-DarkGrayishBlue">
+        <p
+          className={`font-bold cursor-pointer ${
+            filter === "Active"
+              ? "text-primary-BrightBlue"
+              : "text-lightMode-DarkGrayishBlue dark:text-darkMode-DarkGrayishBlue"
+          }`}
+          onClick={() => setFilter("Active")}
+        >
           Active
         </p>
-        <p className="font-bold text-lightMode-DarkGrayishBlue dark:text-darkMode-DarkGrayishBlue">
+        <p
+          className={`font-bold cursor-pointer ${
+            filter === "Completed"
+              ? "text-primary-BrightBlue"
+              : "text-lightMode-DarkGrayishBlue dark:text-darkMode-DarkGrayishBlue"
+          }`}
+          onClick={() => setFilter("Completed")}
+        >
           Completed
         </p>
       </div>
