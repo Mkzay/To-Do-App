@@ -13,7 +13,8 @@ export default function Head({ handleClick }) {
           onClick={handleClick}
           className="hidden dark:block text-white text-3xl hover:text-yellow-400"
         >
-          <FontAwesomeIcon icon={faSun} />
+          <FontAwesomeIcon className="hidden lg:block" icon={faSun} />
+          <img className="lg:hidden" src="./icon-sun.svg" />
         </button>
         <button
           onClick={handleClick}
